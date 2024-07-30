@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  get("/", { :controller => "boards", :action => "index" })
+  # get("/", { :controller => "boards", :action => "index" })
 
-  root "boards#index"
+  root "boards#index" # to:
 
   # Routes for the Post resource:
 
