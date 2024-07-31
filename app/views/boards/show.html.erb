@@ -8,6 +8,7 @@
 
 <hr>
 
+<% if current_user != nil %>
 <h2>
   Add a new post
 </h2>
@@ -43,6 +44,12 @@
     Add post
   </button>
 </form>
+
+<% else %>
+
+  <p>Must be <a href="/users/sign_in">signed in</a> to add a post.</p>
+
+<% end%>
 
 <hr>
 

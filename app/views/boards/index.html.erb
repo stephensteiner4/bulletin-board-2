@@ -8,6 +8,7 @@
 
 <hr>
 
+<% if current_user != nil %>
 <div>
   <div>
     <h2>
@@ -30,6 +31,12 @@
   </div>
 </div>
 
+<% else %>
+
+  <p>Must be <a href="/users/sign_in">signed in</a> to add a board.</p>
+
+<% end%>
+
 <hr>
 
 <ul>
@@ -37,7 +44,9 @@
     <li>
       <a href="/boards/<%= a_board.id %>">
         <%= a_board.name %>
-      </a>
+      </a><br>
+      <div>Owner: <%= User.where({:id => a_board.user_id}).at(0).email %></div>
+      <hr>
     </li>
   <% end %>
 </ul>
